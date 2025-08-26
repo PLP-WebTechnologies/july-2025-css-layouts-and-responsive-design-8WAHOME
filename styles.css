@@ -1,0 +1,112 @@
+/* ===== General Styles ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* ===== Header ===== */
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* ===== Navigation Bar (Flexbox) ===== */
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    background-color: #333;
+}
+
+.navbar li {
+    margin: 0 1rem;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+}
+
+.navbar a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+/* ===== Grid Layout ===== */
+.grid-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Main content + sidebar */
+    gap: 20px;
+    padding: 1rem;
+}
+
+/* Main content styles */
+.content {
+    background-color: #f4f4f4;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+/* Sidebar styles */
+.sidebar {
+    background-color: #e2e2e2;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+/* ===== Flexbox Cards inside Content ===== */
+.card-container {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.card {
+    background-color: #fff;
+    flex: 1 1 calc(33.333% - 1rem);
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* ===== Footer ===== */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 20px;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 900px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* Stack content + sidebar */
+    }
+
+    .card {
+        flex: 1 1 45%; /* two cards per row */
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar ul {
+        flex-direction: column; /* Stack nav items vertically */
+    }
+
+    .card {
+        flex: 1 1 100%; /* One card per row */
+    }
+}
